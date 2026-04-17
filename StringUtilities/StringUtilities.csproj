@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <PackageId>StringUtilities</PackageId>
-    <Version>1.0.1</Version>
-    <Authors>YourName</Authors>
-    <Description>String extension methods – starts with uppercase check</Description>
+    <PackageId>StringUtilitiesAshwath</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Ashwath</Authors>
+    <Description>String extension methods - starts with uppercase check</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
