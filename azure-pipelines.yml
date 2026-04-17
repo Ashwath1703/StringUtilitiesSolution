@@ -1,3 +1,24 @@
+trigger:
+- main
+
+pool:
+  name: MyAgentPool
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
+
+- script: dotnet build --configuration Release
+  displayName: 'Build'
+
+- script: dotnet pack StringUtilities/StringUtilities.csproj --configuration Release --output $(Build.ArtifactStagingDirectory)
+  displayName: 'Pack NuGet'
+
+- task: NuGetAuthenticate@1
+  displayName: 'Authenticate to Azure Artifacts'
+
 - task: NuGetCommand@2
   displayName: 'Push to MyArtifactsFeed'
   inputs:
